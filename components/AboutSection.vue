@@ -13,8 +13,7 @@
         <ul>
           <li>Olá! Meu nome é Thaísa, mas pode me chamar de Thay!</li>
           <li>
-            Sou uma brasiliense de 31 anos apaixonada por desenvolvimento
-            front-end.
+            Sou uma brasiliense de 31 anos.
           </li>
           <li>
             Desenvolvedora front-end apaixonada por experiências interativas.
