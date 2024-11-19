@@ -14,6 +14,7 @@
     <h1>{{ title }}</h1>
     <p>{{ description }}</p>
     <button class="action-btn cv-button" @click="downloadResume">Baixar Currículo</button>
+    <button class="action-btn cv-button" @click="downloadEnglishResume">Download resume in English</button>
   </section>
 </template>
 
@@ -33,6 +34,9 @@ const typingSpeed = 70
 
 function downloadResume() {
   window.open('/cv_thaisa.pdf', '_blank')
+}
+function downloadEnglishResume() {
+  window.open('/cv_ingles.pdf', '_blank')
 }
 
 function toggleLanguageMenu() {
@@ -112,6 +116,7 @@ onBeforeUnmount(() => {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  margin: 0.3rem;
 }
 
 .action-btn::before {
