@@ -22,27 +22,38 @@
     <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
       <div class="modal-content" @click.stop>
         <button @click="closeModal" class="close-modal">X</button>
-        <h3>{{ modalProject.name }}</h3>
-        <img :src="modalProject.image" alt="Imagem do Projeto" class="modal-image" />
-        <p>{{ modalProject.description }}</p>
+        <h3>{{ modalProject?.name }}</h3>
+        <img :src="modalProject?.image" alt="Imagem do Projeto" class="modal-image" />
+        <p>{{ modalProject?.description }}</p>
         <h4>Skills Usadas:</h4>
         <ul>
-          <li v-for="(skill, index) in modalProject.skills" :key="skill">{{ skill }}</li>
+          <li v-for="(skill, index) in modalProject?.skills" :key="skill">{{ skill }}</li>
         </ul>
         <div class="modal-buttons">
-          <a v-if="modalProject.link" :href="modalProject.link" target="_blank" class="project-link">Acessar Site</a>
-          <a v-if="modalProject.repository" :href="modalProject.repository" target="_blank" class="project-link">Ver Repositório</a>
+          <a v-if="modalProject?.link" :href="modalProject.link" target="_blank" class="project-link">Acessar Site</a>
+          <a v-if="modalProject?.repository" :href="modalProject.repository" target="_blank" class="project-link">Ver Repositório</a>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue';
-import ginecoSiteImage from '@/assets/images/ginecoSite.png';
 
-const projects = ref([
+<script lang="ts" setup>
+import { ref, reactive } from 'vue';
+import ginecoSiteImage from '@/assets/images/ginecoSite.png';
+import portifolio from '@/assets/images/portifolio.png';
+
+interface Project {
+  name: string;
+  description: string;
+  image: string;
+  link?: string;
+  repository?: string;
+  skills: string[];
+}
+
+const projects = reactive<Project[]>([
   {
     name: 'Site Ginecologia',
     description: 'Desenvolvi um site para uma ginecologista em Brasília com o objetivo de reposicionar sua presença online e atrair novos pacientes particulares. Anteriormente, a médica atendia por convênios de saúde, mas agora decidiu focar exclusivamente em atendimentos particulares. O novo site foi pensado para comunicar as vantagens dessa mudança e esclarecer aos potenciais pacientes os benefícios de um atendimento mais personalizado e especializado que a modalidade particular oferece.',
@@ -53,10 +64,10 @@ const projects = ref([
   {
     name: 'Portifólio Atual',
     description: 'Este que vos apresento',
-    image: 'https://raw.githubusercontent.com/Thaygm/toDoWork/refs/heads/main/Captura%20de%20tela%202024-09-24%20131454.png',
-    link: 'https://pokedex-green-five-16.vercel.app/',
+    image: portifolio,
+    link: 'https://pokedex-green-fivepp/',
     repository: 'https://github.com/Thaygm/portfolio-2.0',
-    skills: ['Vue', 'Typescript', 'Bootstrap', 'Nuxt', 'i18n', 'Styled-Components', 'React Hooks'],
+    skills: ['Vue', 'Typescript', 'Nuxt', 'i18n' ],
   },
   {
     name: 'Pokedex',
@@ -115,17 +126,19 @@ const projects = ref([
 ]);
 
 const isModalOpen = ref(false);
-const modalProject = ref(null);
+const modalProject = ref<Project | null>(null);
 
-const openModal = (project) => {
+const openModal = (project: Project) => {
   modalProject.value = project;
   isModalOpen.value = true;
 };
 
 const closeModal = () => {
   isModalOpen.value = false;
+  modalProject.value = null;
 };
 </script>
+
 
 <style scoped>
 .projects-section {
