@@ -2,84 +2,95 @@
   <section class="hero">
     <div class="translate-menu">
       <button class="action-btn translate-btn" @click="toggleLanguageMenu">
-        🌐 {{ selectedLanguage }}
+        🌐 {{ selectedLanguage.toUpperCase() }}
       </button>
       <div v-if="showLanguages" class="language-options">
-        <button @click="selectLanguage('PT')">PT</button>
-        <button @click="selectLanguage('EN')">EN</button>
-        <button @click="selectLanguage('ES')">ES</button>
+        <button @click="selectLanguage('pt')">PT</button>
+        <button @click="selectLanguage('en')">EN</button>
+        <button @click="selectLanguage('es')">ES</button>
       </div>
     </div>
+
     <p class="intro-text">{{ introText }}</p>
     <h1>{{ title }}</h1>
     <p>{{ description }}</p>
+
     <button class="action-btn cv-button" @click="downloadResume">Baixar Currículo</button>
-    <button class="action-btn cv-button" @click="downloadEnglishResume">Download resume in English</button>
+    <button class="action-btn cv-button" @click="downloadEnglishResume">Download resume</button>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from "vue";
+import { useI18n } from "vue-i18n";
 
-const introFullText = "Meu nome é Thaísa Mendes e estou pronta para ser sua"
-const titleFullText = "Desenvolvedora Front-End"
-const descriptionFullText = "Transformando ideias em experiências interativas e funcionais na web."
+import type { LocaleMessages, Composer } from "vue-i18n";
 
-const introText = ref("")
-const title = ref("")
-const description = ref("")
-const showLanguages = ref(false)
-const selectedLanguage = ref("PT")
-const typingSpeed = 70
+const introText = ref("");
+const title = ref("");
+const description = ref("");
+const typingSpeed = 70;
 
-function downloadResume() {
-  window.open('/cv_thaisa.pdf', '_blank')
+const { locale, t }: Composer<LocaleMessages> = useI18n();
+const showLanguages = ref<boolean>(false);
+const selectedLanguage = ref<string>(locale.value);
+
+function downloadResume(): void {
+  window.open("/cv_thaisa.pdf", "_blank");
 }
-function downloadEnglishResume() {
-  window.open('/cv_ingles.pdf', '_blank')
-}
-
-function toggleLanguageMenu() {
-  showLanguages.value = !showLanguages.value
+function downloadEnglishResume(): void {
+  window.open("/cv_ingles.pdf", "_blank");
 }
 
-function selectLanguage(language: string) {
-  selectedLanguage.value = language
-  showLanguages.value = false
-  console.log("Idioma selecionado:", language)
+function toggleLanguageMenu(): void {
+  showLanguages.value = !showLanguages.value;
 }
 
-function handleClickOutside(event: Event) {
-  const menu = document.querySelector(".translate-menu")
-  if (menu && !menu.contains(event.target as Node)) {
-    showLanguages.value = false
-  }
+function selectLanguage(language: string): void {
+  locale.value = language;
+  selectedLanguage.value = language.toUpperCase();
+  showLanguages.value = false;
 }
 
 function typeEffect(fullText: string, output: any) {
-  let index = 0
+  output.value = "";
+  let index = 0;
   function type() {
     if (index < fullText.length) {
-      output.value += fullText.charAt(index)
-      index++
-      setTimeout(type, typingSpeed)
+      output.value += fullText.charAt(index);
+      index++;
+      setTimeout(type, typingSpeed);
     }
   }
-  type()
+  type();
+}
+
+function updateTexts() {
+  typeEffect(t("intro"), introText);
+  setTimeout(() => typeEffect(t("title"), title), t("intro").length * typingSpeed + 300);
+  setTimeout(() => typeEffect(t("description"), description), (t("intro").length + t("title").length) * typingSpeed + 600);
+}
+
+function handleClickOutside(event: MouseEvent) {
+  const languageMenu = document.querySelector('.language-options');
+  if (languageMenu && !languageMenu.contains(event.target as Node)) {
+    showLanguages.value = false;
+  }
 }
 
 onMounted(() => {
-  typeEffect(introFullText, introText)
-  setTimeout(() => typeEffect(titleFullText, title), introFullText.length * typingSpeed + 300)
-  setTimeout(() => typeEffect(descriptionFullText, description), (introFullText.length + titleFullText.length) * typingSpeed + 600)
-  document.addEventListener("click", handleClickOutside)
-})
+  updateTexts();
+  document.addEventListener("click", handleClickOutside);
+});
 
 onBeforeUnmount(() => {
-  document.removeEventListener("click", handleClickOutside)
-})
-</script>
+  document.removeEventListener("click", handleClickOutside);
+});
 
+watch(locale, () => {
+  updateTexts();
+});
+</script>
 <style scoped>
 .hero {
   position: relative;

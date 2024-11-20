@@ -1,6 +1,6 @@
 <template>
   <section class="about-section">
-    <h2>Sobre Mim</h2>
+    <h2>{{ $t('aboutMe') }}</h2>
     <div class="about-content">
       <div class="photo-wrapper">
         <img
@@ -11,28 +11,22 @@
       </div>
       <div class="about-text">
         <ul>
-          <li>Olá! Meu nome é Thaísa, mas pode me chamar de Thay!</li>
+          <li>{{ $t('presentationOne') }}</li>
           <li>
-            Sou uma brasiliense de 31 anos.
+            {{ $t('presentationTwo') }}
           </li>
           <li>
-            Desenvolvedora front-end apaixonada por experiências interativas.
+            {{ $t('presentationThree') }}
           </li>
           <li>
-            Desde que comecei a minha jornada no desenvolvimento, venho buscando
-            não apenas codificar, mas transformar a experiência digital de quem
-            interage com os projetos em que me envolvo. Minha missão é criar
-            produtos que façam o usuário se sentir em casa, como se o código
-            estivesse feito sob medida para ele.
+            {{ $t('presentationFour') }}
           </li>
-          <li>Focada em criar soluções elegantes e intuitivas.</li>
+          <li>{{ $t('presentationFive') }}</li>
           <li>
-            Sou formada em Arquitetura e trago essa mesma abordagem para criar
-            soluções que são ao mesmo tempo funcionais e esteticamente
-            agradáveis
+            {{ $t('presentationSix') }}
           </li>
           <li>
-            Pronta para colaborar em projetos inovadores e de alto impacto.
+            {{ $t('presentationSeven') }}
           </li>
         </ul>
       </div>
