@@ -9,6 +9,43 @@
     "presentationFour": "Mi misión es crear productos que hagan que el usuario se sienta como en casa, como si el código estuviera hecho a su medida.",
     "presentationFive": "Centrado en crear soluciones elegantes e intuitivas.",
     "presentationSix": "Soy licenciado en Arquitectura y aporto ese mismo enfoque para crear soluciones que sean funcionales y estéticamente agradables.",
-    "presentationSeven": "Dispuesto a colaborar en proyectos innovadores y de gran impacto."
+    "presentationSeven": "Dispuesto a colaborar en proyectos innovadores y de gran impacto.",
+    "contact": "Contacto",
+    "follow": "¡Sígueme en las redes sociales!",
+    "copywrite": "Thaísa Mendes. Todos los derechos reservados",
+    "emailCopied": "¡Copiado en el portapapeles!",
+    "emailError": "Error al copiar el correo electrónico",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "learnMore": "Más información",
+    "skillsUsed": "Habilidades utilizadas",
+    "accessSite": "Sitio de acceso",
+    "viewRepository": "Ver repositorio",
+    "gynecology": "Página web de ginecología",
+    "gynecoDescription": "Desarrollé un sitio web para una ginecóloga de Brasilia con el objetivo de reposicionar su presencia online y atraer nuevos pacientes privados. Anteriormente, la ginecóloga trabajaba para compañías de seguros médicos, pero ahora ha decidido centrarse exclusivamente en la práctica privada. El nuevo sitio web se diseñó para comunicar las ventajas de este cambio y explicar a los pacientes potenciales los beneficios de la atención más personalizada y especializada que ofrece la práctica privada.",
+    "currentPortfolio": "Cartera actual",
+    "portfolioDescrption": "Ésta",
+    "pokedexDescription": "Todo desarrollador ha hecho una pokedex, ¿verdad? Yo pensaba que era raro por no haber creado una, y lo pensé y procrastiné hasta que me vi 'obligado' a hacerlo por un reto técnico. Pero en mi mente será uno de esos proyectos con los que siempre estaré jugueteando y cambiando!",
+    "unlkdChallenge": "Desafío Unlkd",
+    "challengeDescription": "Página creada para el reto basada en la información dada en Figma para la ejecución en pantalla",
+    "efoodDescription": "Proyecto desarrollado con el objetivo de aprender y entrenar conceptos de React durante el curso de front end. Es una propuesta similar a Ifood con el objetivo de elegir el restaurante, la comida y realizar el pedido para su entrega.",
+    "easyPlayDescription": "Proyecto desarrollado con el objetivo de aprender y entrenar conceptos de React durante el curso de front end. A diferencia de Efood, EasyPlay propone vender juegos en formato digital para ordenadores y videojuegos, algo muy similar a Steam.",
+    "workDescription": "Proyecto desarrollado con el objetivo de aprender y entrenar conceptos de React durante el curso de front end, pero de una forma un poco más cruda. ToDoWork sería fácilmente tu agenda de tareas diarias, donde anotas todo lo que tienes que hacer con su respectivo grado de importancia y lo vas tachando sobre la marcha.",
+    "firstPortfolio": "Primera Cartera",
+    "firstPortfolioDescription": "Fue mi primer portafolio hasta que creé esta pequeña belleza.",
+    "cloneDisney": "Clon del Sitio de Disney",
+    "disneyDescription": "Todo buen dev tiene su Pokedex y su clon del sitio web, ¿verdad?"
+
+
+
 }
+
+
+
+
+
+
+
+
+
 

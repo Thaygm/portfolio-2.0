@@ -5,10 +5,10 @@
         🌐 {{ selectedLanguage.toUpperCase() }}
       </button>
       <div v-if="showLanguages" class="language-options">
-        <button @click="selectLanguage('pt')">PT</button>
-        <button @click="selectLanguage('en')">EN</button>
-        <button @click="selectLanguage('es')">ES</button>
-      </div>
+          <button @click="selectLanguage('pt')">PT</button>
+          <button @click="selectLanguage('en')">EN</button>
+          <button @click="selectLanguage('es')">ES</button>
+        </div>
     </div>
 
     <p class="intro-text">{{ introText }}</p>
@@ -73,7 +73,14 @@ function updateTexts() {
 
 function handleClickOutside(event: MouseEvent) {
   const languageMenu = document.querySelector('.language-options');
-  if (languageMenu && !languageMenu.contains(event.target as Node)) {
+  const toggleButton = document.querySelector('.translate-btn');
+  
+  if (
+    languageMenu &&
+    toggleButton &&
+    !languageMenu.contains(event.target as Node) &&
+    !toggleButton.contains(event.target as Node)
+  ) {
     showLanguages.value = false;
   }
 }

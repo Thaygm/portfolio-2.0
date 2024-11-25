@@ -41,6 +41,7 @@
 
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
+import { useI18n } from 'vue-i18n';
 import ginecoSiteImage from '@/assets/images/ginecoSite.png';
 import portifolio from '@/assets/images/portifolio.png';
 
@@ -53,17 +54,19 @@ interface Project {
   skills: string[];
 }
 
+const { t } = useI18n();
+
 const projects = reactive<Project[]>([
   {
-    name: 'Site Ginecologia',
-    description: 'Desenvolvi um site para uma ginecologista em Brasília com o objetivo de reposicionar sua presença online e atrair novos pacientes particulares. Anteriormente, a médica atendia por convênios de saúde, mas agora decidiu focar exclusivamente em atendimentos particulares. O novo site foi pensado para comunicar as vantagens dessa mudança e esclarecer aos potenciais pacientes os benefícios de um atendimento mais personalizado e especializado que a modalidade particular oferece.',
+    name: t('gynecology'),
+    description: t('gynecoDescription'),
     image: ginecoSiteImage,
     link: 'https://drapaulagiani.com/',
     skills: ['WordPress', 'Plugins Wordpress'],
   },
   {
-    name: 'Portifólio Atual',
-    description: 'Este que vos apresento',
+    name: t('currentPortfolio'),
+    description: t('portfolioDescrption'),
     image: portifolio,
     link: 'https://pokedex-green-fivepp/',
     repository: 'https://github.com/Thaygm/portfolio-2.0',
@@ -71,22 +74,22 @@ const projects = reactive<Project[]>([
   },
   {
     name: 'Pokedex',
-    description: 'Todo desenvolvedor ja fez uma pokedex, certo? Eu me achava estranha por não ter criado uma e pensava e protelava na criação dela até ser "obrigada" a fazê-la para um desafio técnico. Mas na minha cabeça ela será um projeto daqueles que sempre estarei mexendo e alterando algo!',
+    description: t('pokedexDescription'),
     image: 'https://raw.githubusercontent.com/Thaygm/pokedex/refs/heads/main/hero.png',
     link: 'https://pokedex-green-five-16.vercel.app/',
     repository: 'https://github.com/Thaygm/pokedex',
     skills: ['Vue', 'Pinia', 'Typescript', 'Axios', 'Cypress', 'Vite', 'Vue Router'],
   },
   {
-    name: 'Desafio Unlkd',
-    description: 'Pagina criada para desafio baseado em informações dadas no Figma para execução da tela.',
+    name: t('unlkdChallenge'),
+    description: t('challengeDescription'),
     image: 'https://github.com/Thaygm/UnlockedPage/blob/main/Captura%20de%20tela%202024-09-24%20131123.png?raw=true',
     repository: 'https://github.com/Thaygm/UnlockedPage',
     skills: ['Vue', 'Nuxt', 'Typescript', 'Tailwind', 'VeeValidate', 'Yup', 'Axios', 'Maska', 'VueUse', 'Cypress'],
   },
   {
     name: 'Efood',
-    description: 'Projeto desenvolvido com o intuito de aprender e treinar conceitos de React durante o curso de front end. É uma proposta semelhante ao Ifood com o objetivo de escolhr o restaurante, a refeição e fazer o pedido para delivery.',
+    description: t('efoodDescription'),
     image: 'https://raw.githubusercontent.com/Thaygm/E_food/refs/heads/main/Captura%20de%20tela%202024-05-14%20151054.png',
     link: 'https://e-food-dusky.vercel.app/',
     repository: 'https://github.com/Thaygm/E_food',
@@ -94,7 +97,7 @@ const projects = reactive<Project[]>([
   },
   {
     name: 'EasyPlay',
-    description: 'Projeto desenvolvido com o intuito de aprender e treinar conceitos de React durante o curso de front end. Diferente do Efood, o EasyPlay tem uma proposta de venda de jogos em formato digital para computador e videogame, algo muito parecido com a Steam.',
+    description: t('easyPlayDescription'),
     image: 'https://raw.githubusercontent.com/Thaygm/easyPlay/refs/heads/main/Captura%20de%20tela%202024-05-13%20131957.png',
     link: 'https://easy-play-seven.vercel.app/',
     repository: 'https://github.com/Thaygm/easyPlay',
@@ -102,22 +105,22 @@ const projects = reactive<Project[]>([
   },
   {
     name: 'toDoWork',
-    description: 'Projeto desenvolvido com o intuito de aprender e treinar conceitos de React durante o curso de front end, porém de forma um pouco mais crua. O toDoWork facilmente seria sua agenda de afazeres diários, onde voce anota tudo que voce precisa fazer com seu respectivo grau de importancia e vai riscando a medida que for resolvendo a pendências.',
+    description: t('workDescription'),
     image: 'https://raw.githubusercontent.com/Thaygm/toDoWork/refs/heads/main/Captura%20de%20tela%202024-09-24%20131454.png',
     repository: 'https://github.com/Thaygm/toDoWork',
     skills: ['React', 'Typescript', 'Jest', 'Redux', 'React-router-dom', 'Styled-Components', 'React Hooks'],
   },
   {
-    name: 'Primeiro Portifólio',
-    description: 'Foi meu primeiro portifólio até a criação desta belezinha atual.',
+    name: t('firstPortfolio'),
+    description: t('firstPortfolioDescription'),
     image: 'https://raw.githubusercontent.com/Thaygm/PortifolioThay/refs/heads/main/Captura%20de%20tela%202024-11-13%20230108.png',
     link: 'https://portifolio-thay-seven.vercel.app/',
     repository: 'https://github.com/Thaygm/PortifolioThay',
     skills: ['React', 'Javascript', 'Framer-motion', 'Styled-Components', 'React Hooks', 'Babel', 'Jest'],
   },
   {
-    name: 'Clone Site Disney',
-    description: 'Todo bom dev tem sua Pokedex e seu clone de site, não é mesmo? ',
+    name: t('cloneDisney'),
+    description: t('disneyDescription'),
     image: 'https://raw.githubusercontent.com/Thaygm/clone_disneyplus/main/.github/disney%2B.png',
     link: 'https://clone-disneyplus-3f4ampnpv-thaygm.vercel.app/?vercelToolbarCode=NaKeOA31BMJgqGp',
     repository: 'https://github.com/Thaygm/clone_disneyplus',

@@ -1,6 +1,6 @@
 <template>
     <section id="contato" class="contact-section">
-      <h2>Contato</h2>
+      <h2>{{ $t('contact') }}</h2>
       <div class="contact-content">
         <div class="social-icons">
           <a
@@ -23,10 +23,10 @@
             <img src="/assets/images/icons/EMAIL-logo.svg" alt="E-mail" />
           </button>
         </div>
-        <p class="follow-text">Me siga nas redes sociais!</p>
+        <p class="follow-text">{{ $t('follow') }}</p>
       </div>
       <footer class="footer">
-        <p>&copy; {{ new Date().getFullYear() }} Thaísa Mendes. Todos os direitos reservados.</p>
+        <p>&copy; {{ new Date().getFullYear() }} {{ $t('copywrite') }}</p>
       </footer>
     </section>
   </template>
@@ -34,12 +34,15 @@
   
   
   <script lang="ts" setup>
+  import { useI18n } from "vue-i18n";
+
+  const { t } = useI18n();
 const copiarEmail = () => {
   const email = "codebythay@gmail.com";
   navigator.clipboard
     .writeText(email)
-    .then(() => alert("E-mail copiado para a área de transferência!"))
-    .catch(() => alert("Erro ao copiar o e-mail."));
+    .then(() => alert(t('emailCopied')))
+    .catch(() => alert(t('copyError')));
 };
 </script>
 
