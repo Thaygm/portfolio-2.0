@@ -26,7 +26,7 @@ import JsLogo from '@/assets/images/icons/JS-logo.svg';
 import VueLogo from '@/assets/images/icons/VUE-logo.svg';
 import ReactLogo from '@/assets/images/icons/REACT-logo.svg';
 import NuxtLogo from '@/assets/images/icons/NUXT-logo.svg';
-import TailwindLogo from '@/assets/images/icons/Tailwind-logo.svg';
+import TailwindLogo from '@/assets/images/icons/TAILWIND-logo.svg';
 import BootstrapLogo from '@/assets/images/icons/Bootstrap-logo.svg';
 import NodeLogo from '@/assets/images/icons/Node-logo.svg';
 import ExpressLogo from '@/assets/images/icons/Express-logo.svg';
