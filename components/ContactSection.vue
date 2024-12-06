@@ -118,4 +118,33 @@ const copiarEmail = () => {
   border-top: 1px solid #1abc9c;
   padding-top: 1rem;
 }
+
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 1rem;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .follow-text {
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+
 </style>

@@ -151,4 +151,63 @@ onMounted(() => {
   font-size: 1.1rem;
   color: #fff;
 }
+
+@media (max-width: 1200px) {
+  .skills-section {
+    padding: 3rem 1rem;
+  }
+
+  .skills-content {
+    gap: 1.5rem;
+  }
+
+  .skill-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .skills-section h2 {
+    font-size: 2rem;
+  }
+
+  .skill-icon {
+    max-width: 60px;
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .skill-item {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .skill-icon {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
 </style>

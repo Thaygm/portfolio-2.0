@@ -190,4 +190,26 @@ watch(locale, () => {
   background-color: #1abc9c;
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .intro-text,
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .action-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .translate-menu {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
 </style>

@@ -103,4 +103,32 @@
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .profile-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .about-text {
+    text-align: center;
+    padding: 0;
+  }
+
+  .about-text ul {
+    padding-left: 0;
+  }
+
+  .about-text li {
+    font-size: 1rem;
+  }
+}
+
 </style>

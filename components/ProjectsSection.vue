@@ -317,4 +317,69 @@ const closeModal = () => {
 .modal-buttons a:hover {
   background-color: #16a085;
 }
+
+@media (max-width: 1200px) {
+  .projects-section {
+    padding: 3rem 1rem;
+  }
+
+  .featured-image {
+    max-width: 100%;
+    max-height: 250px;
+  }
+
+  .projects-cards {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .projects-section h2 {
+    font-size: 2rem;
+  }
+
+  .project-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .modal-image {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-project-content {
+    flex-direction: column;
+  }
+
+  .projects-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .featured-image {
+    max-height: 200px;
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+    padding: 0.3rem 1rem;
+  }
+}
+
 </style>
