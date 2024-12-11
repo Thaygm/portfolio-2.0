@@ -36,10 +36,10 @@ const showLanguages = ref<boolean>(false);
 const selectedLanguage = ref<string>(locale.value);
 
 function downloadResume(): void {
-  window.open("/cv_thaisa.pdf", "_blank");
+  window.open("/curriculo.novo.pdf", "_blank");
 }
 function downloadEnglishResume(): void {
-  window.open("/cv_ingles.pdf", "_blank");
+  window.open("/curriculo.novo.ing.pdf", "_blank");
 }
 
 function toggleLanguageMenu(): void {
